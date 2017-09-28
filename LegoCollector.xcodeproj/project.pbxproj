@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B700E2E21F7C5D5C008E67AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B737A7401F7AD21800FD973B /* Main.storyboard */; };
+		B71DBA621F7AE72A008B5E0B /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DBA611F7AE72A008B5E0B /* AddViewController.swift */; };
 		B737A73D1F7AD21800FD973B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737A73C1F7AD21800FD973B /* AppDelegate.swift */; };
 		B737A73F1F7AD21800FD973B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B737A73E1F7AD21800FD973B /* ViewController.swift */; };
-		B737A7421F7AD21800FD973B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B737A7401F7AD21800FD973B /* Main.storyboard */; };
 		B737A7451F7AD21800FD973B /* LegoCollector.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B737A7431F7AD21800FD973B /* LegoCollector.xcdatamodeld */; };
 		B737A7471F7AD21800FD973B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B737A7461F7AD21800FD973B /* Assets.xcassets */; };
 		B737A74A1F7AD21800FD973B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B737A7481F7AD21800FD973B /* LaunchScreen.storyboard */; };
+		B76577731F7D8BCA00871862 /* LEGO_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B700E2E31F7C5DF7008E67AF /* LEGO_logo.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B700E2E31F7C5DF7008E67AF /* LEGO_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LEGO_logo.jpg; sourceTree = "<group>"; };
+		B71DBA611F7AE72A008B5E0B /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		B737A7391F7AD21800FD973B /* LegoCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LegoCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B737A73C1F7AD21800FD973B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B737A73E1F7AD21800FD973B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +60,10 @@
 		B737A73B1F7AD21800FD973B /* LegoCollector */ = {
 			isa = PBXGroup;
 			children = (
+				B700E2E31F7C5DF7008E67AF /* LEGO_logo.jpg */,
 				B737A73C1F7AD21800FD973B /* AppDelegate.swift */,
 				B737A73E1F7AD21800FD973B /* ViewController.swift */,
+				B71DBA611F7AE72A008B5E0B /* AddViewController.swift */,
 				B737A7401F7AD21800FD973B /* Main.storyboard */,
 				B737A7461F7AD21800FD973B /* Assets.xcassets */,
 				B737A7481F7AD21800FD973B /* LaunchScreen.storyboard */,
@@ -126,9 +132,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B700E2E21F7C5D5C008E67AF /* Main.storyboard in Resources */,
 				B737A74A1F7AD21800FD973B /* LaunchScreen.storyboard in Resources */,
 				B737A7471F7AD21800FD973B /* Assets.xcassets in Resources */,
-				B737A7421F7AD21800FD973B /* Main.storyboard in Resources */,
+				B76577731F7D8BCA00871862 /* LEGO_logo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +148,7 @@
 			files = (
 				B737A73F1F7AD21800FD973B /* ViewController.swift in Sources */,
 				B737A7451F7AD21800FD973B /* LegoCollector.xcdatamodeld in Sources */,
+				B71DBA621F7AE72A008B5E0B /* AddViewController.swift in Sources */,
 				B737A73D1F7AD21800FD973B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

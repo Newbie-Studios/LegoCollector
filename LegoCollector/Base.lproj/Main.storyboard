@@ -13,11 +13,23 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LegoCollector" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="LegoCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tKZ-GU-UaE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tKZ-GU-UaE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="M4n-Uo-cdm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tKZ-GU-UaE" secondAttribute="trailing" id="bJk-TY-ST0"/>
+                            <constraint firstItem="tKZ-GU-UaE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vFP-El-3WN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tKZ-GU-UaE" secondAttribute="bottom" id="vpl-2O-tFs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="dKd-9x-TSC">
@@ -27,33 +39,29 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="tKZ-GU-UaE" id="LN8-qh-GlY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="456.80000000000001" y="117.39130434782609"/>
         </scene>
-        <!--View Controller-->
+        <!--Add View Controller-->
         <scene sceneID="bua-08-KVU">
             <objects>
-                <viewController id="GLg-l5-7wV" sceneMemberID="viewController">
+                <viewController id="GLg-l5-7wV" customClass="AddViewController" customModule="LegoCollector" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IRa-Bg-TnI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HmB-sj-pq3">
-                                <rect key="frame" x="67.5" y="94" width="240" height="130"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="Ibh-4H-O8k"/>
-                                    <constraint firstAttribute="width" constant="240" id="Ukk-CN-aUW"/>
-                                </constraints>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPO-G5-OeE">
-                                <rect key="frame" x="67.5" y="254" width="240" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPO-G5-OeE">
+                                <rect key="frame" x="158" y="254" width="59" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GvM-xz-KYR">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GvM-xz-KYR">
                                 <rect key="frame" x="127.5" y="314" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="ToU-jj-HoR"/>
@@ -65,28 +73,50 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YmR-LU-axZ">
                                 <rect key="frame" x="172.5" y="374" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="GLg-l5-7wV" eventType="touchUpInside" id="uM0-ME-fP4"/>
+                                </connections>
                             </button>
+                            <imageView clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LEGO_logo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Moy-Kw-ct5">
+                                <rect key="frame" x="67" y="84" width="240" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="8rT-EM-x21"/>
+                                    <constraint firstAttribute="width" constant="240" id="NRx-oj-sMz"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="SPO-G5-OeE" firstAttribute="centerX" secondItem="IRa-Bg-TnI" secondAttribute="centerX" id="Jv5-Mo-SXZ"/>
                             <constraint firstItem="YmR-LU-axZ" firstAttribute="top" secondItem="GvM-xz-KYR" secondAttribute="bottom" constant="30" id="XlE-SA-DVg"/>
                             <constraint firstItem="GvM-xz-KYR" firstAttribute="centerX" secondItem="IRa-Bg-TnI" secondAttribute="centerX" id="cLq-bF-RW0"/>
-                            <constraint firstItem="HmB-sj-pq3" firstAttribute="centerX" secondItem="IRa-Bg-TnI" secondAttribute="centerX" id="e4a-Oy-j3O"/>
-                            <constraint firstItem="SPO-G5-OeE" firstAttribute="width" secondItem="HmB-sj-pq3" secondAttribute="width" id="for-Lk-Ioq"/>
-                            <constraint firstItem="HmB-sj-pq3" firstAttribute="top" secondItem="5nz-gU-0Xu" secondAttribute="top" constant="30" id="iaz-2a-FeF"/>
+                            <constraint firstItem="Moy-Kw-ct5" firstAttribute="centerX" secondItem="IRa-Bg-TnI" secondAttribute="centerX" id="eW0-d1-bOh"/>
+                            <constraint firstItem="Moy-Kw-ct5" firstAttribute="top" secondItem="5nz-gU-0Xu" secondAttribute="top" constant="20" id="mxq-EG-vUl"/>
                             <constraint firstItem="YmR-LU-axZ" firstAttribute="centerX" secondItem="IRa-Bg-TnI" secondAttribute="centerX" id="s0E-pO-Mfa"/>
+                            <constraint firstItem="SPO-G5-OeE" firstAttribute="top" secondItem="Moy-Kw-ct5" secondAttribute="bottom" constant="40" id="sfQ-0X-gWC"/>
                             <constraint firstItem="GvM-xz-KYR" firstAttribute="top" secondItem="SPO-G5-OeE" secondAttribute="bottom" constant="30" id="uX1-0J-JZo"/>
-                            <constraint firstItem="SPO-G5-OeE" firstAttribute="top" secondItem="HmB-sj-pq3" secondAttribute="bottom" constant="30" id="xok-8J-TjR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5nz-gU-0Xu"/>
                     </view>
                     <navigationItem key="navigationItem" id="wew-3B-b5U">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="GRM-xV-K9z"/>
-                            <barButtonItem title="Photos" id="J8v-mP-Mzd"/>
+                            <barButtonItem systemItem="camera" id="GRM-xV-K9z">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="GLg-l5-7wV" id="uUZ-cA-erb"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Photos" id="J8v-mP-Mzd">
+                                <connections>
+                                    <action selector="photosTapped:" destination="GLg-l5-7wV" id="aZ6-bR-d5Q"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="codeField" destination="GvM-xz-KYR" id="boH-U9-HOz"/>
+                        <outlet property="imageView" destination="Moy-Kw-ct5" id="RFx-Hc-VaV"/>
+                        <outlet property="nameField" destination="SPO-G5-OeE" id="cnD-Zr-Xli"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPD-4V-Obk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,4 +141,7 @@
             <point key="canvasLocation" x="-254.40000000000001" y="92.653673163418304"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LEGO_logo.jpg" width="1772" height="1772"/>
+    </resources>
 </document>
