@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var legos : [Lego] = [] //create variable equal to our core data
     
-    
+    //comment for some source control (away from source tree?)
     
     override func viewDidLoad() {
         super.viewDidLoad()
