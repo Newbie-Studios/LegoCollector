@@ -37,6 +37,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let legoTable = legos[indexPath.row] //created constant equal to indexpath.row of legos (and subsequently core data)
+        performSegue(withIdentifier: "gameSegue", sender: legoTable) //performs a seqgue when tapped
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) { //prepare for segue
+        let nextVC = segue.destination as! AddViewController //nextVC constant is equal to the destination of the seque to AddViewController
+        nextVC.lego = sender as? Lego
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext //brough in core data context
         do{

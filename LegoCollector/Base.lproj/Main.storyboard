@@ -35,7 +35,7 @@
                     <navigationItem key="navigationItem" id="dKd-9x-TSC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YXz-AR-rym">
                             <connections>
-                                <segue destination="GLg-l5-7wV" kind="show" id="Cj8-Ur-Szy"/>
+                                <segue destination="GLg-l5-7wV" kind="show" identifier="gameSegue" id="Cj8-Ur-Szy"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -84,6 +84,14 @@
                                     <constraint firstAttribute="width" constant="240" id="NRx-oj-sMz"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voj-uh-6cO">
+                                <rect key="frame" x="165" y="434" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="GLg-l5-7wV" eventType="touchUpInside" id="PYz-r0-PEC"/>
+                                    <action selector="deleteTapped:" destination="GLg-l5-7wV" eventType="touchUpInside" id="WvY-xI-Xp3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -91,10 +99,12 @@
                             <constraint firstItem="YmR-LU-axZ" firstAttribute="top" secondItem="GvM-xz-KYR" secondAttribute="bottom" constant="30" id="XlE-SA-DVg"/>
                             <constraint firstItem="GvM-xz-KYR" firstAttribute="centerX" secondItem="IRa-Bg-TnI" secondAttribute="centerX" id="cLq-bF-RW0"/>
                             <constraint firstItem="Moy-Kw-ct5" firstAttribute="centerX" secondItem="IRa-Bg-TnI" secondAttribute="centerX" id="eW0-d1-bOh"/>
+                            <constraint firstItem="voj-uh-6cO" firstAttribute="top" secondItem="YmR-LU-axZ" secondAttribute="bottom" constant="30" id="lfM-JB-xdh"/>
                             <constraint firstItem="Moy-Kw-ct5" firstAttribute="top" secondItem="5nz-gU-0Xu" secondAttribute="top" constant="20" id="mxq-EG-vUl"/>
                             <constraint firstItem="YmR-LU-axZ" firstAttribute="centerX" secondItem="IRa-Bg-TnI" secondAttribute="centerX" id="s0E-pO-Mfa"/>
                             <constraint firstItem="SPO-G5-OeE" firstAttribute="top" secondItem="Moy-Kw-ct5" secondAttribute="bottom" constant="40" id="sfQ-0X-gWC"/>
                             <constraint firstItem="GvM-xz-KYR" firstAttribute="top" secondItem="SPO-G5-OeE" secondAttribute="bottom" constant="30" id="uX1-0J-JZo"/>
+                            <constraint firstItem="voj-uh-6cO" firstAttribute="centerX" secondItem="IRa-Bg-TnI" secondAttribute="centerX" id="vOg-tP-MYZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5nz-gU-0Xu"/>
                     </view>
@@ -113,7 +123,9 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="addUpdateButton" destination="YmR-LU-axZ" id="B6W-QR-JMc"/>
                         <outlet property="codeField" destination="GvM-xz-KYR" id="boH-U9-HOz"/>
+                        <outlet property="deleteButton" destination="voj-uh-6cO" id="pQB-V7-KZx"/>
                         <outlet property="imageView" destination="Moy-Kw-ct5" id="RFx-Hc-VaV"/>
                         <outlet property="nameField" destination="SPO-G5-OeE" id="cnD-Zr-Xli"/>
                     </connections>
